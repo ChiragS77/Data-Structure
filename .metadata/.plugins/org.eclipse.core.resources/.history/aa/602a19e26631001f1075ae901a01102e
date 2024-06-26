@@ -1,0 +1,13 @@
+package com.strings.ques;
+
+public class String_DSA {
+
+
+	
+	public static void main(String[] args) {
+		String name = "chirag";
+		for(int i=name.length()-1; i>=0; i--) {
+			System.out.println(name.charAt(i));
+		}
+	}
+}

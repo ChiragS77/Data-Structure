@@ -1,0 +1,21 @@
+package com.strings.ques;
+
+public class StringQues {
+
+	public static void checkEquals(String str1 ,String str2) {
+		
+		if(str1.compareTo(str2)==0) {
+			System.out.println("It is equal");
+		}
+		else {
+			System.out.println("It is not");
+		}
+	}
+	
+	public static void main(String[] args) {
+		
+		String s1 = "Tony";
+		String s2 = "Tony";
+		checkEquals(s1,s2);
+	}
+}

@@ -1,0 +1,20 @@
+package com.strings.ques;
+
+public class String_DSA {
+
+
+	
+	public static void main(String[] args) {
+		String name = "chirag";
+		char chry[] = name.toCharArray();
+		int end = chry.length-1;
+
+		for(int i=0; i<end; i++){
+			chry[i] = name.charAt(end);
+			chry[end] = name.charAt(end);
+			end--;
+		}
+		System.out.println(chry);
+		
+	}
+}

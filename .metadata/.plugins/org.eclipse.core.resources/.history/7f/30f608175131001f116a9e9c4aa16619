@@ -1,0 +1,29 @@
+package com.strings.ques;
+
+public class StringQues {
+
+	//checks string are equal or what
+	public static void checkEquals(String str1 ,String str2) {
+		
+		//s1 > s2: +ve
+		//s1 == s2 : 0
+		//s1 < s2 : -ve value
+		
+		if(str1.compareTo(str2)==0) {
+			System.out.println("It is equal");
+		}
+		else {
+			System.out.println("It is not");
+		}
+	}
+	
+	public static void main(String[] args) {
+		
+		String s1 = "Tony";
+		String s2 = "Tony";
+//		checkEquals(s1,s2);
+		
+		String name = "My name is Chirag Deshmukh";
+		System.out.println(name.substring(11,17));
+	}
+}

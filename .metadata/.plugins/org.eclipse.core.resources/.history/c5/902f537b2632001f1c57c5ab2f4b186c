@@ -1,0 +1,13 @@
+package com.strings.ques;
+
+public class StringRough {
+
+	public static void main(String[] args) {
+		
+		String name = "I am Chirag Deshmukh";
+	       String str[] = name.split(" ");
+	       for(String x : str) {
+	    	   System.out.print(x);
+	       }
+	}
+}
