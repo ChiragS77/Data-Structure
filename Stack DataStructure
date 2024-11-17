@@ -140,4 +140,22 @@ public static void pushAtBottom(Stack<Integer> s, int n) {
 		}
 
 	}
+
+================================ Reverse a String ================================
+	public static String reverseString(String str) {
+		
+		Stack<Character> s = new Stack<Character>();
+		int idx = 0;
+		while(idx!= str.length()) {
+			 s.push(str.charAt(idx));
+			 idx++;
+		}
+		StringBuilder sb = new StringBuilder();
+		while(!s.empty()) {
+			char ch = s.pop();
+			sb.append(ch);
+		}
+		return sb.toString();
+	}
+
      
