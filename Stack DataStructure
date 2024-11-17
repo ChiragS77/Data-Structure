@@ -1,0 +1,143 @@
+-------> Implement Stack using Arraylist :
+
+    static ArrayList<Integer> list = new ArrayList<>();
+	
+	//isEmpty
+	public static boolean isEmpty() {
+		return list.size() == 0;
+	}
+	
+	//push
+	public static void push(int data) {
+		
+		list.add(data);
+		
+	}
+	
+	//pop
+	public static int pop() {
+		if(isEmpty()) {
+			return -1;
+		}
+		int top = list.get(list.size() -1);
+		list.remove(list.size() -1);
+		return top;
+	}
+	
+	//peek
+	public static int peek() {
+		if (isEmpty()) {
+			return -1;
+		}
+	  return list.get(list.size()-1);
+	}
+	
+	public static void main(String[] args) {
+	  Stack.push(1);
+	  Stack.push(2);
+	  Stack.push(3);
+	
+	 while(!Stack.isEmpty()) {
+		 System.out.print(" "+Stack.peek());
+		 Stack.pop();
+	 }
+	}
+
+
+==========================================================================================
+------->  Implement Stack using LinkedList :
+
+public class Node {
+
+	int data;
+	Node next;
+	
+	public Node(int data) {
+		this.data = data;
+		this.next = null;
+	}
+}
+
+static Node head;
+
+	// isEmpty
+	public boolean isEmpty() {
+
+		return head == null;
+	}
+
+	// push
+	public void push(int data) {
+		Node newNode = new Node(data);
+		if (isEmpty()) {
+			head = newNode;
+			return;
+		}
+		newNode.next = head;
+		head = newNode;
+	}
+
+	// pop
+	public int pop() {
+		if (isEmpty()) {
+			return -1;
+		}
+		int top = head.data;
+		head = head.next;
+		return top;
+	}
+
+	// peek
+	public int peek() {
+		if (isEmpty()) {
+			return -1;
+		}
+		return head.data;
+	}
+	
+	public static void main(String[] args) {
+		StackNode s = new StackNode();
+		s.push(1);
+		s.push(2);
+		s.push(3);
+		while(!s.isEmpty()) {
+			System.out.print(" "+s.peek());
+			s.pop();
+		}
+	}
+
+======================================================================================
+---------> implement stack using collection framework
+          Stack<Integer> s = new Stack<Integer>();
+	s.push(1);
+	s.push(2);
+	s.push(3);
+
+==================================================================================
+---> push the data in  at bottom of stack :
+public static void pushAtBottom(Stack<Integer> s, int n) {
+		if (s.isEmpty()) {
+			s.push(n);
+			return;
+		}
+
+		int top = s.pop();
+		pushAtBottom(s, n);
+		s.push(top);
+
+	}
+
+	public static void main(String[] args) {
+		Stack<Integer> s = new Stack<Integer>();
+		s.push(1);
+		s.push(2);
+		s.push(3);
+		pushAtBottom(s, 4);
+
+		while (!s.isEmpty()) {
+			System.out.print("|" + s.peek());
+			s.pop();
+		}
+
+	}
+     
