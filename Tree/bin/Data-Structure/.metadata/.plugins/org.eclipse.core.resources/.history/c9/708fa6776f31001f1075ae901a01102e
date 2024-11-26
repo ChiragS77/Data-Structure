@@ -1,0 +1,79 @@
+package com.strings.ques;
+
+public class String_DSA {
+	
+	// ------------ Reverse the String -------------
+	public static String reverseString(String orig)
+	{
+	    char[] s = orig.toCharArray();
+	    int n = s.length;
+	    int halfLength = n / 2;
+	    for (int i=0; i<halfLength; i++)
+	    {
+	        char temp = s[i];
+	        s[i] = s[n-1-i];
+	        s[n-1-i] = temp;
+	    }
+	    return new String(s);
+	}
+	
+	public static String reverseStringUsing2pointer(String orig) {
+		
+		int start =0;
+		int end = orig.length()-1;
+		char ary[] = orig.toCharArray();
+		
+		while(start<end) {
+			
+			char temp = ary[start];
+			ary[start] = ary[end];
+			ary[end] = ary[start];
+			start++;
+			end--;
+		}
+		return new String(ary);
+	}
+	
+// <------------------------> Reverse the sentence in the string <------------------->
+
+	public static void reverse(char str[], int start ,int end) {
+		
+		while(start<end) {
+			char temp = str[start];
+			str[start] = str[end];
+			str[end] = temp;
+			start++;
+			end--;
+		}
+		
+	}
+	
+	static String reverseWords(char s[]) {
+		int start =0;
+		
+		for(int end =0; end<s.length;end++) {
+			if(end==' ') {
+				reverse(s,start,end);
+				start = end + 1;
+			}
+		}
+		
+		//reverse the last word
+		reverse(s ,start,s.length-1);
+		
+		//reverse the whole string
+		reverse(s ,0, s.length-1);
+		
+		return new String(s);
+	}
+	
+	public static void main(String[] args) {
+		
+		String sentence = "I am Chirag Deshmukh";
+		
+		String words = reverseWords(sentence.toCharArray());
+		System.out.println(words);
+	
+		
+	}
+}

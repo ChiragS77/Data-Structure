@@ -1,0 +1,22 @@
+package com.strings.ques;
+
+public class String_DSA {
+
+
+	
+	public static void main(String[] args) {
+		String name = "chirag";
+		char chry[] = name.toCharArray();
+		int end = chry.length-1;
+
+		for(int i=0; i<end; i++){
+			char temp = chry[i];
+			chry[i] = chry[end];
+			chry[end] = temp;
+			end--;
+		}
+		 name = chry.toString();
+		 System.out.println(name);
+		
+	}
+}

@@ -1,0 +1,127 @@
+package com.dsa.section1;
+public class DsaRough {
+	
+	public static void printMax(int num[]) {
+		int currSum = 0;
+		int maxSum = -1;
+		
+		for(int i=0; i<num.length; i++) {
+			currSum = currSum + num[i];
+			if(currSum > -1) {
+				currSum = -1;
+			}
+			maxSum = Math.max(currSum, maxSum);
+		}
+		
+		System.out.println("Maximum sum of subarray is :"+maxSum);
+	}
+
+	public static void trappedWtr(int height[]) {
+		
+		int maxleft[] = new int[height.length];
+		maxleft[0] = height[0];
+		for(int i =1; i<height.length; i++) {
+		    maxleft[i] =  Math.max(height[i], height[i-1]);
+		}
+		
+		int maxRight[] = new int[height.length];
+		maxRight[height.length -1] = height[height.length-1];
+		for(int i = height.length-2; i>=0;i--) {
+			maxRight[i] = Math.max(height[i], height[i+1]);
+		}
+		
+		int trappedRainWater = 0;
+		
+		for(int i =0; i<height.length; i++) {
+			int waterLevel = Math.min(maxleft[i], maxRight[i]);
+			trappedRainWater += waterLevel - height[i];
+		}
+		
+		System.out.println("Sum of the trapedRainWater: "+trappedRainWater);
+		
+		
+	}
+	
+	public static void printPair(int arr[]) {
+		
+		for(int i =0; i<arr.length-1; i++) {
+			int start = i;
+			for(int j =start+1; j<arr.length; j++) {
+				int end = j;
+				System.out.print("("+arr[start]+","+arr[end]+")");
+			}
+			System.out.println();
+		}
+	}
+	
+	public static void printSubarray(int arr[]) {
+		int pairs = 0;
+		int currSum =0;
+		int printMax =0;
+		for(int i= 0; i<arr.length; i++) {
+			int start = i;
+			for(int j=start ; j<arr.length; j++) {
+				int end = j;
+				 currSum = 0;
+				for(int k = start ; k<=end; k++) {
+					System.out.print(" "+arr[k]);
+					currSum = currSum + arr[k];
+				}
+				if(printMax < currSum) {
+					printMax = currSum;
+				}
+				System.out.println();
+				pairs++;
+			}
+			System.out.println();
+		}
+		System.out.println("Total no. of pairs :"+pairs);
+		System.out.println("maximum sum of array is :"+printMax);
+	}
+	
+	
+	public static void printMaxSum(int arr[]) {
+	
+		int currSum = 0;
+		int maxSum = Integer.MIN_VALUE; 
+		
+		int prefix[] = new int[arr.length];
+		prefix[0] = arr[0];
+		for(int i =1; i<arr.length; i++) {
+			prefix[i] = prefix[i-1] + arr[i];
+		}
+		
+		for(int i=0; i<arr.length;i++) {
+			int start = i;
+			for(int j=i;j<arr.length; j++) {
+				int end = j;
+				currSum = start==0? prefix[end]: prefix[end] - prefix[start-1];
+				
+				if(maxSum < currSum) {
+					maxSum = currSum;
+				}
+			}
+			System.out.println();
+		}
+		
+		System.out.println("the maximum sum is :"+maxSum);
+		
+	}
+	
+	
+	
+	
+	public static void main(String[] args) {
+
+		int height[] = {4,2,0,6,3,2,5};
+//		trappedWtr(height);
+		
+		int arr[] = {2,4,6,8,10};
+//		printPair(arr);
+		
+//		printSubarray(arr);
+		
+		int num[] = {1,-2,6,-1,3};
+		printMaxSum(num);
+	}
+}

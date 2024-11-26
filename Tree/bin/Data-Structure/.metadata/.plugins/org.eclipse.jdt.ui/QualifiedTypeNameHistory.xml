@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="boolean"/>
+    <fullyQualifiedTypeName name="LL.Node"/>
+    <fullyQualifiedTypeName name="LinkedList_PracticeSet_1.LL"/>
+    <fullyQualifiedTypeName name="com.recursion.RoughWork.Node"/>
+    <fullyQualifiedTypeName name="com.recursion.RoughWork"/>
+    <fullyQualifiedTypeName name="graph.adjacencylist.Edge"/>
+    <fullyQualifiedTypeName name="com.binary.BinaryTreeXt.BinaryTree"/>
+    <fullyQualifiedTypeName name="com.binary.RoughWork.BinaryTree"/>
+    <fullyQualifiedTypeName name="com.binary.RoughWork2.BinaryTree"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.Set"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="int"/>
+    <fullyQualifiedTypeName name="java.util.HashSet"/>
+    <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+</qualifiedTypeNameHistroy>

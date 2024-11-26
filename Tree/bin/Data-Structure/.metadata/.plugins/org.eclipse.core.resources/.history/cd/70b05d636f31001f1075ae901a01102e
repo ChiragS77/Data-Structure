@@ -1,0 +1,44 @@
+package com.strings.ques;
+
+public class String_DSA {
+	
+	// ------------ Reverse the String -------------
+	public static String reverse(String orig)
+	{
+	    char[] s = orig.toCharArray();
+	    int n = s.length;
+	    int halfLength = n / 2;
+	    for (int i=0; i<halfLength; i++)
+	    {
+	        char temp = s[i];
+	        s[i] = s[n-1-i];
+	        s[n-1-i] = temp;
+	    }
+	    return new String(s);
+	}
+	
+	public static String reverse2(String orig) {
+		
+		int start =0;
+		int end = orig.length()-1;
+		char ary[] = orig.toCharArray();
+		
+		while(start<end) {
+			
+			char temp = ary[start];
+			ary[start] = ary[end];
+			ary[end] = ary[start];
+			start++;
+			end--;
+		}
+		return new String(ary);
+	}
+
+	
+	public static void main(String[] args) {
+		
+		String orig = "Chirag";
+		System.out.println(reverse(orig));
+		
+	}
+}
